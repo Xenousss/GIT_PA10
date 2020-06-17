@@ -13,5 +13,10 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         else
             transform.Translate(Vector3.right * Time.deltaTime * -Speed);
+        if (transform.position.x <= 0 && transform.position.x >= -0.05)
+        {
+            GameManager.thisManager.UpdateScore(1);
+        }
+
     }
 }
